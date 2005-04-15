@@ -1,4 +1,9 @@
 Revision history for Perl extension Catalyst::Model::CDBI::CRUD.
 
+0.02  Fri Apr 15 15:54:00 2005
+        - Updated examples for Catalyst 5
+        - Added Template::Plugin::Class to dependencies
+        - Added POD docs, made sure they passed.
+        
 0.01  Fri Jan 28 22:00:00 2005
         - first release

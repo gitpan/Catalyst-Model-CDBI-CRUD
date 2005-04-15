@@ -6,7 +6,7 @@ use Class::DBI::AsForm;
 use Class::DBI::FromForm;
 use Class::DBI::Plugin::RetrieveAll;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -36,20 +36,22 @@ Catalyst::Model::CDBI::CRUD - CRUD CDBI Model Class
         root => '/home/joeuser/myapp/root'
     );
 
-    __PACKAGE__->action(
-        'table' => sub {
+        sub table : Global {
             my ( $self, $c ) = @_;
-            $c->form( optional => [ MyApp::Model::CDBI::Table->columns ] );
+            $c->form( optional => [ MyApp::Model::CDBI::Table->columns 
+                                  ] ); #see Data::FormValidator
             $c->forward('MyApp::Model::CDBI::Table');
         }
-    );
+        sub end : Private {
+          $c->forward('MyApp::V::TT');
+        }  
 
     1;
 
 =head1 DESCRIPTION
 
-This is a subclass of C<Catalyst::Model::CDBI> with additional CRUD methods.
-Don't forget to copy the base templates to config->root!
+This is a subclass of C<Catalyst::Model::CDBI> with additional CRUD 
+methods. Don't forget to copy the base templates to config->root!
 
 =head2 METHODS
 

@@ -10,7 +10,9 @@ WriteMakefile(
         Class::DBI::Loader              => 0,
         Class::DBI::FromForm            => 0,
         Class::DBI::AsForm              => 0,
-        Class::DBI::Plugin::RetrieveAll => 0
+        Class::DBI::Plugin::RetrieveAll => 0,
+        Catalyst::View::TT              => 0,
+        Template::Plugin::Class         => 0
     },
     VERSION_FROM => 'CRUD.pm'
 );
