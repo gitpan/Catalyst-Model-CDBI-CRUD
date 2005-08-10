@@ -6,7 +6,7 @@ use Class::DBI::AsForm;
 use Class::DBI::FromForm;
 use Class::DBI::Plugin::RetrieveAll;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -125,7 +125,7 @@ sub process {
     my $self   = shift;
     my $c      = shift;
     my $method = shift || 'list';
-    $c->stash->{item}     = $self->retrieve( $_[0] ) if $_[0];
+    $c->stash->{item}     = $self->retrieve( $_[0] ) if defined( $_[0] );
     $c->stash->{template} = $method;
     $c->stash->{class}    = ref $self || $self;
     $self->$method( $c, @_ ) if $self->can($method);
