@@ -6,7 +6,7 @@ use Class::DBI::AsForm;
 use Class::DBI::FromForm;
 use Class::DBI::Plugin::RetrieveAll;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 NAME
 
@@ -48,10 +48,13 @@ Catalyst::Model::CDBI::CRUD - CRUD CDBI Model Class
 
     1;
 
+
 =head1 DESCRIPTION
 
 This is a subclass of C<Catalyst::Model::CDBI> with additional CRUD 
 methods. Don't forget to copy the base templates to config->root!
+
+*NOTE* This module has been deprecated. See BUGS section below!
 
 =head2 METHODS
 
@@ -138,6 +141,12 @@ Does nothing by default.
 =cut
 
 sub view { }
+
+=head1 BUGS
+
+This module is no longer supported by the Catalyst developers. We keep it 
+indexed for the sake of existing users, but highly recommend new users to
+look at L<Catalyst::Helper::Controller::Scaffold>
 
 =head1 SEE ALSO
 

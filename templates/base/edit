@@ -8,4 +8,4 @@
     <input type="submit" value="Edit"/>
 <form/>
 <br/>
-<a href="[% base _ c.request.action _ '/list' %]">List</a>
+<a href="[% base _ c.request.match _ '/list' %]">List</a>
